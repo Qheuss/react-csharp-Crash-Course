@@ -10,50 +10,43 @@ import {
   Flex,
   Heading,
   Button,
+  HStack,
+  Avatar,
+  Text,
+  Badge,
 } from '@chakra-ui/react';
 import './App.css';
 import { AddIcon } from '@chakra-ui/icons';
+import { useEffect, useState } from 'react';
+import { BASE_URL } from './constant';
+import { Product } from './types/product';
 
 function App() {
-  const fetchData = async () => {};
+  const [data, setData] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(BASE_URL + 'product');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching product details:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <Box shadow={'md'} rounded={'md'} m={32}>
-      <Flex
-        px={5}
-        justifyContent={'space-between'}
-        alignItems={'center'}
-        mb={10}
-      >
-        <Heading>Product List</Heading>
-        <Button colorScheme='blue' leftIcon={<AddIcon />}>
-          Add Product
-        </Button>
-      </Flex>
-      <TableContainer>
-        <Table variant='striped'>
-          <Thead>
-            <Tr>
-              <Th>Id</Th>
-              <Th>Product Name</Th>
-              <Th>Desciption</Th>
-              <Th>Is in store?</Th>
-              <Th isNumeric>Price</Th>
-              <Th>Actions</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>inches</Td>
-              <Td>inches</Td>
-              <Td>inches</Td>
-              <Td>millimetres (mm)</Td>
-              <Td isNumeric>25.4</Td>
-              <Td>25.4</Td>
-            </Tr>
-          </Tbody>
-        </Table>
-      </TableContainer>
-    </Box>
+   
   );
 }
 

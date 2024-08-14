@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\api\\API.csproj": {}
+    "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\api\\API.csproj": {
+    "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\api\\API.csproj",
+        "projectUniqueName": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\api\\API.csproj",
+        "projectPath": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\API\\API.csproj",
         "packagesPath": "C:\\Users\\quent\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\api\\obj\\",
+        "outputPath": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\quent\\AppData\\Roaming\\NuGet\\NuGet.Config",
