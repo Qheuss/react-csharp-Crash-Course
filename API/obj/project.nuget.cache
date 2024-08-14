@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ANkWAhPvtwk=",
+  "dgSpecHash": "e4vSsjymwYk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\FullStack\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\quent\\Documents\\GitHub\\react-csharp-Crash-Course\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\quent\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\quent\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
