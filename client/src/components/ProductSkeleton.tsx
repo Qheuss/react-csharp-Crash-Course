@@ -12,11 +12,11 @@ import {
   Tbody,
   Td,
   HStack,
-  Avatar,
   Badge,
   Text,
+  Skeleton,
+  SkeletonCircle,
 } from '@chakra-ui/react';
-import { Product } from '../types/product';
 
 const ProductSkeleton = () => {
   return (
@@ -27,50 +27,76 @@ const ProductSkeleton = () => {
         alignItems={'center'}
         mb={10}
       >
-        <Heading>Product List</Heading>
-        <Button colorScheme='blue' leftIcon={<AddIcon />}>
-          Add Product
-        </Button>
+        <Heading>
+          <Skeleton>Product List</Skeleton>
+        </Heading>
+        <Skeleton>
+          <Button colorScheme='blue' leftIcon={<AddIcon />}>
+            Add Product
+          </Button>
+        </Skeleton>
       </Flex>
       <TableContainer>
         <Table variant='striped'>
           <Thead>
             <Tr>
-              <Th>Id</Th>
-              <Th>Product Name</Th>
-              <Th>Desciption</Th>
-              <Th>Is in store?</Th>
-              <Th isNumeric>Price</Th>
-              <Th>Actions</Th>
+              <Th>
+                <Skeleton>Id</Skeleton>
+              </Th>
+              <Th>
+                <Skeleton>Product Name</Skeleton>
+              </Th>
+              <Th>
+                <Skeleton>Desciption</Skeleton>
+              </Th>
+              <Th>
+                <Skeleton>Is In Store?</Skeleton>
+              </Th>
+              <Th isNumeric>
+                <Skeleton>Price</Skeleton>
+              </Th>
+              <Th>
+                <Skeleton>Actions</Skeleton>
+              </Th>
             </Tr>
           </Thead>
           <Tbody>
-            {data.map((product: Product) => (
-              <Tr key={product.id}>
-                <Td>{product.id}</Td>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <Tr key={index}>
+                <Td>
+                  <Skeleton>0</Skeleton>
+                </Td>
                 <Td>
                   <HStack>
-                    <Avatar name={product.name} />
-                    <Text>{product.name}</Text>
+                    <SkeletonCircle>AD</SkeletonCircle>
+                    <Text>
+                      <Skeleton>Name</Skeleton>
+                    </Text>
                   </HStack>
                 </Td>
-                <Td>{product.description}</Td>
                 <Td>
-                  <Badge>{product.isInStore ? 'Yes' : 'No'}</Badge>
+                  <Skeleton>Product Description</Skeleton>
                 </Td>
-                <Td isNumeric>{product.price}</Td>
-                <Td>25.4</Td>
+                <Td>
+                  <Badge>
+                    <Skeleton>Yes</Skeleton>
+                  </Badge>
+                </Td>
+                <Td isNumeric>
+                  <Skeleton>123</Skeleton>
+                </Td>
+                <Td>
+                  <HStack gap={3}>
+                    <SkeletonCircle>1</SkeletonCircle>
+                    <SkeletonCircle>2</SkeletonCircle>
+                    <SkeletonCircle>3</SkeletonCircle>
+                  </HStack>
+                </Td>
               </Tr>
             ))}
           </Tbody>
         </Table>
       </TableContainer>
-
-      {data.length == 0 && (
-        <Heading p={5} textAlign={'center'} fontSize={14}>
-          NO DATA
-        </Heading>
-      )}
     </Box>
   );
 };

@@ -19,6 +19,7 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> Products()
         {
+            await Task.Delay(1000);
             return Ok(await _context.Products.AsNoTracking().ToListAsync());
         }
 
@@ -30,17 +31,6 @@ namespace API.Controllers
 
             await _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
-
-            return Ok(product);
-        }
-
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetProduct(int id)
-        {
-            var product = await _context.Products.FindAsync(id);
-
-            if (product is null)
-                return NotFound();
 
             return Ok(product);
         }
