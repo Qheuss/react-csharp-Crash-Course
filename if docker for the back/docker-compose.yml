@@ -1,0 +1,11 @@
+services:
+  web:
+    image: clicker-back
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # change 8080 to the port that you want to use
+      - '8080:80'
+    env_file:
+      - .env
